@@ -8,6 +8,6 @@ number = random
 
 
 get '/' do
-	erb.index
+	erb :index
 end
 

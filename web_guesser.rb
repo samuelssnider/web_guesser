@@ -1,5 +1,7 @@
 require 'sinatra'
 
 get '/' do
-	"The secret number is X"
+	random = rand(100)
+	"The secret number is #{random}"
+	"blah blah blah"
 end

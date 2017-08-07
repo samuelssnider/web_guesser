@@ -8,13 +8,15 @@ SECRET_NUMBER  = rand(100)
 
 
 get '/' do
-	guess   = params['guess'].to_i
+	guess   = params['guess'].to_i if params['guess']
 	message = check_guess(guess, SECRET_NUMBER)
 	erb :index, :locals => {:message => message}	
 end
 
 def check_guess(guess, number)
 	case guess
+	when nil
+		message = "Guess my number (1-100)" 
 	when (number + 5)..105
 		message = "Way too high!"
 	when (number + 1)..(number + 5)

@@ -16,17 +16,17 @@ end
 def check_guess(guess, number)
 	case guess
 	when nil
-		message = "Guess my number (1-100)" 
+		message = "<span id = 'start'>Guess my number (1-100)</span>" 
 	when (number + 5)..105
-		message = "Way too high!"
+		message = "<span id = 'wth'><em>Way</em> too high!</span>"
 	when (number + 1)..(number + 5)
-		message = "Too high!"
+		message = "<span id = 'too-high'>Too high!</span>"
 	when 0..(number - 5)
-		message = "Way too low!"
+		message = "<span id = 'wtl'><em>Way</em> too low!</span>"
 	when (number - 5)..(number - 1)
-		message = "Too low!"
+		message = "<span id = 'too-low'> Too low!</span>"
 	when number
-		message = "You got it right! \n The Secret number is #{guess}"
+		message = "<div id = 'winner'>You got it right! <br> <br> The Secret number is <span id = 'secret-number'> #{guess}</span>! </div>"
 	end
 end
 

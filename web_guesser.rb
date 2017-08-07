@@ -3,11 +3,18 @@ require 'sinatra/reloader'
 
 
 
-random = rand(100) 
-number = random
+random  = rand(100) 
+number  = random
+
+
 
 
 get '/' do
-	erb :index, :locals => {:number => number}
+	guess = params['guess']
+	erb :index, :locals   => {:number  => number }
+	erb :index, :locals   => {:guess   => guess  }
+
+
+	
 end
 

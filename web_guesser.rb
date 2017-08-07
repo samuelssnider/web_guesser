@@ -8,6 +8,6 @@ number = random
 
 
 get '/' do
-	"the secret number #{number}"
+	"the secret number is #{number}"
 end
 

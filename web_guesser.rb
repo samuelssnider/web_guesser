@@ -8,6 +8,6 @@ number = random
 
 
 get '/' do
-	"the secret number is #{number}"
+	erb.index
 end
 

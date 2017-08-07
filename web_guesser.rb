@@ -5,16 +5,19 @@ require 'sinatra/reloader'
 
 random  = rand(100) 
 number  = random
+# message = ""
 
 
 
 
 get '/' do
-	guess = params['guess']
-	erb :index, :locals   => {:number  => number }
-	erb :index, :locals   => {:guess   => guess  }
-
-
+	erb :index, :locals   => {:message   => message}
+	erb :index, :locals   => {:number    => number }
+	guess = params['guess'].to_i 
+	message = ""
+	if guess > number
+	 message = "too high"
+	end
 	
 end
 
